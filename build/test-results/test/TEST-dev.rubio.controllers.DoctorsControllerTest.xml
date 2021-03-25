@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="dev.rubio.controllers.DoctorsControllerTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2021-03-19T01:00:18" hostname="PREDATOR-HELIOS" time="0.974">
+  <properties/>
+  <testcase name="testHandleGetDoctorsRequest()" classname="dev.rubio.controllers.DoctorsControllerTest" time="0.967"/>
+  <testcase name="testHandleGetMarriageCounselors()" classname="dev.rubio.controllers.DoctorsControllerTest" time="0.004"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[[Test worker] INFO dev.rubio.controllers.DoctorController - getting all doctors
+[Test worker] INFO dev.rubio.controllers.DoctorController - Getting Marriage Counselors
+]]></system-err>
+</testsuite>
