@@ -1,6 +1,7 @@
 package dev.rubio.util;
 
 import dev.rubio.models.Doctor;
+import dev.rubio.models.Specialization;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
@@ -30,6 +31,7 @@ public class HibernateUtil {
 
             //provide hibernate mappings to configuration
             configuration.addAnnotatedClass(Doctor.class);
+            configuration.addAnnotatedClass(Specialization.class);
 
             sessionFactory = configuration.buildSessionFactory();
         }

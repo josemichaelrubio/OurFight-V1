@@ -1,7 +1,6 @@
 package dev.rubio.services;
 
 import dev.rubio.data.DoctorDaoHibImpl;
-import dev.rubio.data.DoctorDaoImpl;
 import dev.rubio.data.DoctorDao;
 import dev.rubio.models.Doctor;
 
