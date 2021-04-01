@@ -19,10 +19,15 @@ public class DoctorController {
         ctx.json(service.getAll());
     }
 
-    public void handleGetSpecialtyDoctors(Context ctx) {
-        logger.info("Getting specialty doctors ");
-        ctx.json(service.getSpecialty());
+    public void handleGetTherapists(Context ctx){
+        logger.info("Acquiring Therapists from db");
+        ctx.json(service.getTherapists());
     }
+
+//    public void handleGetSpecialtyDoctors(Context ctx) {
+//        logger.info("Getting specialty doctors ");
+//        ctx.json(service.getSpecialty());
+//    }
 
     public void handleGetPsychiatrists(Context ctx) {
         logger.info("Getting Psychiatrists");
@@ -38,6 +43,11 @@ public class DoctorController {
         logger.info("Getting Marriage Counselors");
         ctx.json(service.getMarriageCounselors());
     }
+    public void handleGetGroupTherapists(Context ctx) {
+        logger.info("Getting Group Therapists");
+        ctx.json(service.getGroupTherapists());
+    }
+
 
     public void handlePostNewDoctor(Context ctx) {
         Doctor doctor = ctx.bodyAsClass(Doctor.class);
@@ -46,18 +56,25 @@ public class DoctorController {
         ctx.status(201);
     }
 
-    public void handleDeleteDoctorById(Context ctx){
-        String idString = ctx.pathParam("id");
-        if (idString.matches("^\\d+$")){
-            int idInput = Integer.parseInt(idString);
-            logger.info("Deleting Record with Id: {}", idInput);
-            service.delete(idInput);
-        }
-        else {
-            throw new BadRequestResponse("input \"" +idString+"\" cannot be parsed to an int");
-        }
-    }
+//    public void handleDeleteDoctorById(Context ctx){
+//        String idString = ctx.pathParam("id");
+//        if (idString.matches("^\\d+$")){
+//            int idInput = Integer.parseInt(idString);
+//            logger.info("Deleting Record with Id: {}", idInput);
+//            service.delete(idInput);
+//        }
+//        else {
+//            throw new BadRequestResponse("input \"" +idString+"\" cannot be parsed to an int");
+//        }
+//    }
 
+    public void handleDeleteDoctorById(Context ctx){
+
+        String id = ctx.body();
+//        int idInt = Integer.parseInt(id);
+        service.delete(id);
+
+    }
     // attempt to delete doctor by Id and Name
     /*
 

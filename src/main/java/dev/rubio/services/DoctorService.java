@@ -11,14 +11,18 @@ public class DoctorService {
     private DoctorDao doctorDao = new DoctorDaoHibImpl();
 
     public List<Doctor> getAll(){ return doctorDao.getAllDoctors(); }
-    public List<Doctor> getSpecialty(){ return doctorDao.getDoctorsBySpecialty();}
+    public List<Doctor> getTherapists(){return doctorDao.getTherapists();}
+
+//    public List<Doctor> getSpecialty(){ return doctorDao.getDoctorsBySpecialty();}
     public List<Doctor> getPsychiatrists(){ return doctorDao.getPsychiatrists();}
     public List<Doctor> getChildPsychologists() { return doctorDao.getChildPsychologists();}
     public List<Doctor> getMarriageCounselors(){return doctorDao.getMarriageCounselors();}
+    public List<Doctor> getGroupTherapists(){return doctorDao.getGroupTherapists();}
     public Doctor add(Doctor doctor){
         return doctorDao.addNewDoctor(doctor);
     }
-    public void delete(int id){doctorDao.deleteDoctor(id);}
+    public void delete(String id){doctorDao.deleteDoctor(id);}
+
 
     // attempt to delete doctor by Id and name
     /*

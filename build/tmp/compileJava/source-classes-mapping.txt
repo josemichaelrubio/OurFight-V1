@@ -2,29 +2,29 @@ dev/rubio/Driver.java
  dev.rubio.Driver
 dev/rubio/hib/SpecHibDriver.java
  dev.rubio.hib.SpecHibDriver
-dev/rubio/controllers/AuthController.java
- dev.rubio.controllers.AuthController
-dev/rubio/data/SpecializationDao.java
- dev.rubio.data.SpecializationDao
-dev/rubio/models/Specialization.java
- dev.rubio.models.Specialization
-dev/rubio/util/SecurityUtil.java
- dev.rubio.util.SecurityUtil
-dev/rubio/util/ConnectionUtil.java
- dev.rubio.util.ConnectionUtil
 dev/rubio/models/Doctor.java
  dev.rubio.models.Doctor
 dev/rubio/data/DoctorDaoHibImpl.java
  dev.rubio.data.DoctorDaoHibImpl
 dev/rubio/data/SpecializationDaoImpl.java
  dev.rubio.data.SpecializationDaoImpl
-dev/rubio/services/DoctorService.java
- dev.rubio.services.DoctorService
 dev/rubio/hib/DocHibDriver.java
  dev.rubio.hib.DocHibDriver
+dev/rubio/util/ConnectionUtil.java
+ dev.rubio.util.ConnectionUtil
+dev/rubio/util/SecurityUtil.java
+ dev.rubio.util.SecurityUtil
 dev/rubio/data/DoctorDao.java
  dev.rubio.data.DoctorDao
 dev/rubio/controllers/DoctorController.java
  dev.rubio.controllers.DoctorController
 dev/rubio/util/HibernateUtil.java
  dev.rubio.util.HibernateUtil
+dev/rubio/data/SpecializationDao.java
+ dev.rubio.data.SpecializationDao
+dev/rubio/models/Specialization.java
+ dev.rubio.models.Specialization
+dev/rubio/services/DoctorService.java
+ dev.rubio.services.DoctorService
+dev/rubio/controllers/AuthController.java
+ dev.rubio.controllers.AuthController

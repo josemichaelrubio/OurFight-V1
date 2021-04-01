@@ -48,6 +48,12 @@ public class Doctor implements Serializable {
         this.gender = gender;
     }
 
+    public Doctor(int id) {
+        this.id = id;
+    }
+
+    public Doctor(String id) {
+    }
 
 
     public int getId() {

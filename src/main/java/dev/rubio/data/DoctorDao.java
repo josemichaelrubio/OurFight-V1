@@ -6,12 +6,15 @@ import java.util.List;
 
 public interface DoctorDao {
     public List<Doctor> getAllDoctors();
-    public List<Doctor> getDoctorsBySpecialty();
+    public List<Doctor> getTherapists();
+
+//    public List<Doctor> getDoctorsBySpecialty();
     public List<Doctor> getPsychiatrists();
     public List<Doctor> getChildPsychologists();
     public List<Doctor> getMarriageCounselors();
+    public List<Doctor> getGroupTherapists();
     Doctor addNewDoctor(Doctor doctor);
-    void deleteDoctor(int id);
+    void deleteDoctor(String id);
 
     // Attempt to delete doctor by ID and Name
     /*

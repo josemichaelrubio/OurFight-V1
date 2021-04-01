@@ -28,11 +28,18 @@ public class Driver {
             path("doctors",()->{
                 before("/",authController::userToken);
                 get(doctorController::handleGetDoctorsRequest);
+                post(doctorController::handlePostNewDoctor);
+                path(":id",()->{
+                    before("/", authController::userToken);
+                    delete(doctorController::handleDeleteDoctorById);
+                });
+                delete(doctorController::handleDeleteDoctorById);
                 path("therapists",()->{
                    before("/", authController::userToken);
-                   get(doctorController:: handleGetSpecialtyDoctors);
+                   get(doctorController:: handleGetTherapists);
 
                 });
+
                 path("psychiatrists", ()->{
                     before("/", authController::userToken);
                     get(doctorController::handleGetPsychiatrists);
@@ -46,6 +53,10 @@ public class Driver {
                     before("/", authController::userToken);
                     get(doctorController::handleGetMarriageCounselors);
                 });
+                path("group-therapists", ()->{
+                    before("/", authController::userToken);
+                    get(doctorController::handleGetGroupTherapists);
+                });
 
 
             });
@@ -54,18 +65,9 @@ public class Driver {
 ////                after("/", securityUtil::attachResoinseHeaders); ////////////////////////////////////
 //                    });
 //            );
-            path("admin", ()->{
-                    post(authController::authenticateAdmin);
-                    path("doctors" , ()->{
-                       before("/", authController::adminToken);
-                       get(doctorController::handleGetDoctorsRequest);
-                       post(doctorController::handlePostNewDoctor);
-                       path(":id",()->{ //this is not popping up
-                           before("/", authController::adminToken);
-                           delete(doctorController::handleDeleteDoctorById);
-                       });
-
-                    });
+            path("login", ()->{
+                    post(authController::authenticateLogin);
+                    after("/",securityUtil::attachResponseHeaders);
             });
         });
 

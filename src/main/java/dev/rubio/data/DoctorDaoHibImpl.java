@@ -1,7 +1,6 @@
 package dev.rubio.data;
 
 import dev.rubio.models.Doctor;
-import dev.rubio.models.Specialization;
 import dev.rubio.util.HibernateUtil;
 import org.hibernate.Session; // I think this is the correct import
 import org.hibernate.Transaction;
@@ -21,25 +20,48 @@ public class DoctorDaoHibImpl implements DoctorDao{
         }
 
     }
-
-    @Override
-    public List<Doctor> getDoctorsBySpecialty() {
-        return null;
+    public List<Doctor> getTherapists(){
+        try(Session s = HibernateUtil.getSession()){
+            List<Doctor> doctors = s.createQuery("from Doctor where specialty = 'Therapy'", Doctor.class).list();
+            return doctors;
+        }
     }
+
+//    @Override
+//    public List<Doctor> getDoctorsBySpecialty() {
+//        return null;
+//    }
 
     @Override
     public List<Doctor> getPsychiatrists() {
-        return null;
+        try(Session s = HibernateUtil.getSession()){
+            List<Doctor> doctors = s.createQuery("from Doctor where specialty = 'Psychiatry'", Doctor.class).list();
+            return doctors;
+        }
     }
 
     @Override
     public List<Doctor> getChildPsychologists() {
-        return null;
+        try(Session s = HibernateUtil.getSession()) {
+            List<Doctor> doctors = s.createQuery("from Doctor where specialty_specialty = 'Child Psychology'", Doctor.class).list();
+            return doctors;
+        }
     }
 
     @Override
     public List<Doctor> getMarriageCounselors() {
-        return null;
+            try(Session s = HibernateUtil.getSession()) {
+                List<Doctor> doctors = s.createQuery("from Doctor where specialty_specialty = 'Marriage Counseling'", Doctor.class).list();
+                return doctors;
+            }
+    }
+
+    @Override
+    public List<Doctor> getGroupTherapists(){
+        try(Session s = HibernateUtil.getSession()){
+            List<Doctor> doctors = s.createQuery("from Doctor where specialty = 'Group Therapy'", Doctor.class).list();
+            return doctors;
+        }
     }
 
     @Override
@@ -59,7 +81,11 @@ public class DoctorDaoHibImpl implements DoctorDao{
 
 
     @Override
-    public void deleteDoctor(int id) {
-
+    public void deleteDoctor(String id) {
+        try(Session s = HibernateUtil.getSession()){
+            Transaction tx = s.beginTransaction();
+            s.delete(new Doctor(id));
+            tx.commit();
+        }
     }
 }
