@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f223a027-661a-472e-bca3-0481bdac54e1" name="Default Changelist" comment="Oh yeah" />
+    <list default="true" id="f223a027-661a-472e-bca3-0481bdac54e1" name="Default Changelist" comment="Oh yeah">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/rubio/Driver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/rubio/Driver.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

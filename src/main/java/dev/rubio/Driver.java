@@ -17,7 +17,7 @@ public class Driver {
 
 
 
-        Javalin app = Javalin.create(JavalinConfig::enableCorsForAllOrigins).start(7000); //establishing a connection with Javalin
+        Javalin app = Javalin.create(JavalinConfig::enableCorsForAllOrigins).start(80); //establishing a connection with Javalin
         app.get("/", ctx -> ctx.result("Welcome to Our Fight!"));
 
         SecurityUtil securityUtil = new SecurityUtil();
