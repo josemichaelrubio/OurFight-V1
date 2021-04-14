@@ -3,3 +3,7 @@ http://rubiotraining.blob.core.windows.net/ourfight-frontend-p1/index.html
 
 Link to frontend repository:
 https://gitlab.com/210301-java-azure/jose_rubio/ourfight-p1-frontend
+
+To Login and access the "Add new Doctor" ability:
+Username- admin@gmail.com
+Password- 123 
